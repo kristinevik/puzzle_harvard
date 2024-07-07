@@ -83,9 +83,7 @@ knowledge3 = And(
     Biconditional(BKnight, And(Or( # Depends if A is kneight or knave
         Biconditional(AKnight, AKnave),  # If A is a knight and A said "I am a knave,", A is telling the truth
         Biconditional(AKnave, Not(AKnave)), # If A is a knave and A said "I am a knave," A is lying
-        ))),
-
-    Biconditional(BKnight, CKnave), # If B is a knight, then sentence is true: B says "C is a knave."
+        ), CKnave)),
 
     # If B is a knave, then sentence about A is false, and we can not infer anything from it
     # If B is a knave, then sentence about C is false
